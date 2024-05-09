@@ -25,19 +25,19 @@
                 </a>
             </li>
             <li>
-                <a href="penari.html">
+                <a href="penari.php">
                     <i class="bx bx-user"></i>
                     <span class="links_name">Daftar Penari</span>
                 </a>
             </li>
             <li>
-                <a href="jadwal.html">
+                <a href="jadwal.php">
                     <i class="bx bx-calendar"></i>
                     <span class="links_name">Jadwal</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="#" id="logout">
                     <i class="bx bx-log-out"></i>
                     <span class="links_name">Log out</span>
                 </a>
@@ -59,6 +59,16 @@
         </div>
     </section>
 
+    <script>
+        document.getElementById("logout").addEventListener("click", function() {
+            var confirmation = confirm("Apakah Anda yakin ingin logout?");
+            if (confirmation) {
+                // Di sini kamu bisa tambahkan logika logout
+                alert("Anda telah logout!");
+            }
+        });
+    </script>
+    
     <script>
         let sidebar = document.querySelector(".sidebar");
         let sidebarBtn = document.querySelector(".sidebarBtn");

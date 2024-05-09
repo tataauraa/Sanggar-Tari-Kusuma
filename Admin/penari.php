@@ -15,7 +15,7 @@
         <nav>
             <ul>
                 <li><a href="#" class="active">Daftar Penari</a></li>
-                <li><a href="jadwal.html">Jadwal</a></li>
+                <li><a href="jadwal.php">Jadwal</a></li>
             </ul>
         </nav>
     </header>
@@ -47,7 +47,7 @@
                     </tr>
             </table>
             
-            <a href="tambah.html"><button>Tambah Penari</button></a>
+            <a href="tambah.php"><button>Tambah Penari</button></a>
         </nav>
         </section>
     </main>

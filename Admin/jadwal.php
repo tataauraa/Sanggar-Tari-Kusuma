@@ -14,8 +14,8 @@
         <h1>Sanggar Tari - Jadwal Kelas</h1>
         <nav>
             <ul>
-                <li><a href="penari.html">Daftar Penari</a></li>
-                <li><a href="jadwal.html" class="active">Jadwal</a></li>
+                <li><a href="penari.php">Daftar Penari</a></li>
+                <li><a href="jadwal.php" class="active">Jadwal</a></li>
             </ul>
         </nav>
     </header>

@@ -7,49 +7,48 @@
     <meta name="viewport" content="width=device-width",
     initial-scale="1.0">
     <title>SANGGAR TARI KUSUMA</title>
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 </html>
 
 <body>
     <header>
+        <h2 class="logo">SANGGAR TARI KUSUMA</h2>
         <nav class="navigation">
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="login.html">Login</a>
+            <a href="index.php">Home</a>
+            <a href="contact.php">Contact</a>
+            <a href="registrasi.php">Registrasi</a>
+           
         </nav>
     </header>
     <div class="wrapper">
-        <div class="form-box registrasi">
-            <h2>Registration</h2>
-            <form action="#">
+        <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
+
+
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="login-proses.php" method ="post">
                 <div class="input-box">
                     <span class="icon"><ion-icon 
                     name="mail"></ion-icon></span>
-                    <input type ="email" required>
+                    <input id= "email" name="email" type ="email" required> 
                     <label>Email</label>
-                </div>
-                <div class="input-box">
-                    <span class="icon"><ion-icon 
-                    name="person"></ion-icon></span>
-                    <input type ="text" required>
-                    <label>Username</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                     <ion-icon name="lock-closed"></ion-icon>
                 </span>
-                    <input type ="password" required>
+                    <input id= "password" name="password" type ="password" required>
                     <label>Password</label>
                 </div>
                 <div class="remember-forgot">
-                    <label><input type="checkbox">Saya menyetujui syarat dan ketentuan</label>
-                    
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
                 </div>
-                <button type="submit" class="btn">Registrasi</button>
+                <button type="submit" class="btn">Login</button>
                 <div class="login-register">
-                    <p>Already have an account? 
-                        <a href="login.html">Login</a></p>
+                    <p>Don't have an account? 
+                    <a href="registrasi.php">Registrasi</a></p>
                 </div>
             </form>
         </div>

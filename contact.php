@@ -14,9 +14,9 @@
     <header>
         <h2 class="logo">SANGGAR TARI KUSUMA</h2>
         <nav class="navigation">
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="login.html">Login</a>
+            <a href="index.php">Home</a>
+            <a href="contact.php">Contact</a>
+            <a href="login.php">Login</a>
         </nav>
     </header>
 
