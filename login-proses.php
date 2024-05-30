@@ -1,20 +1,47 @@
 <?php
 session_start();
+include 'koneksi.php';
 
-$email = isset($_POST['email']) ? $_POST['email'] : '';
-$password =isset ($_POST['password']) ? $_POST['password'] : '';
-$s_email = isset ($_SESSION['email']) ? $_SESSION['email'] : $email;
-$s_password = isset($_SESSION['password']) ? $_SESSION['password'] : $password;
+if (isset($_POST['email'], $_POST['password'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-if ($email === $s_email && $password === $s_password)
-{
-    $_SESSION['email'] = $email;
-    $_SESSION['password'] = $password;
-    header("Location: index.php");
-    exit();
-}
-else
-{
-    echo "<script> alert ('Login Gagal');</script>";
+    $sql = "SELECT * FROM tb_admin WHERE Email = '$email'";
+    $result = mysqli_query($koneksi, $sql);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $user = mysqli_fetch_assoc($result);
+
+        if (password_verify($password, $user['Password'])) {
+            $_SESSION['username'] = $user['Username'];
+            echo "
+                <script>
+                    alert('Selamat datang, " . $user['Username'] . "!');
+                    window.location = 'admin.php';
+                </script>
+            ";
+        } else {
+            echo "
+                <script>
+                    alert('Password salah');
+                    window.location = 'login.php';
+                </script>
+            ";
+        }
+    } else {
+        echo "
+            <script>
+                alert('Email tidak terdaftar');
+                window.location = 'login.php';
+            </script>
+        ";
+    }
+} else {
+    echo "
+        <script>
+            alert('Pastikan Anda Mengisi Semua Data');
+            window.location = 'login.php';
+        </script>
+    ";
 }
 ?>

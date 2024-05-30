@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header('Location: login.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +22,6 @@
 <body>
     <div class="sidebar">
         <div class="logo-details">
-            
             <span class="logo_name">Sanggar Tari Kusuma</span>
         </div>
         <ul class="nav-links">
@@ -37,7 +44,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" id="logout">
+                <a href="logout.php" id="logout">
                     <i class="bx bx-log-out"></i>
                     <span class="links_name">Log out</span>
                 </a>
@@ -56,6 +63,7 @@
         </nav>
         <div class="home-content">
             <h1>Hi Admin!</h1>
+            <h2>Selamat datang, <?php echo $_SESSION['username']; ?>!</h2>
         </div>
     </section>
 
@@ -63,12 +71,12 @@
         document.getElementById("logout").addEventListener("click", function() {
             var confirmation = confirm("Apakah Anda yakin ingin logout?");
             if (confirmation) {
-                // Di sini kamu bisa tambahkan logika logout
-                alert("Anda telah logout!");
+                <?php session_destroy(); ?>
+                window.location = 'login.php';
             }
         });
     </script>
-    
+
     <script>
         let sidebar = document.querySelector(".sidebar");
         let sidebarBtn = document.querySelector(".sidebarBtn");
